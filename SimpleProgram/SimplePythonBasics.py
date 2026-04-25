@@ -31,6 +31,7 @@ print(a.issuperset(b))  # Output: True (a is a superset of b)
 print(a.isdisjoint(b))  # Output: False (a and b have common elements)
 print(a.add(5))  # Output: None (adds 5 to the set a)
 print(a.remove(5))  # Output: None (removes 5 from the set a)
+# print(len(a+b)) # Output: Error: unsupported operand type(s) for +: 'set' and 'set' (sets cannot be concatenated using the + operator)
 
 print(22%3)  # Output: 1 (the remainder of 22 divided by 3)
 print(22//3)  # Output: 7 (the quotient of 22 divided by 3, rounded down to the nearest whole number)
@@ -134,4 +135,29 @@ while True:
         break
     print(i, end=" ") # Output: 1, 2, 3, 4, 5, 6 (prints numbers from 1 to 6 until it reaches a number that is divisible by 7, at which point it breaks out of the loop)
     i += 1
+
+list2 = [1, 2, 3, 4, 5]
+print(list2.remove(3))  # Output: None (removes the first occurrence of 3 from the list, but does not return the removed element)
+print(list2)  # Output: [1, 2, 4, 5] (the list after removing the element 3)
+
+list3 = [True, "python"]
+#for x in list3:
+#    x.upper()  # Output: Error: 'bool' object has no attribute 'upper' (cannot call upper method on a boolean value)
+print(list3)  # Output: [True, 'python'] (the original list remains unchanged since the upper method was not successfully called on the string element)
+
+x = 0
+y = 1
+while x*y < 10:
+    print(x, end=" ") # Output: 0, 4, 8 (prints multiples of 4 until the product with y is no longer less than 10)
+    x += 4
+
+xy = 'Python'
+print(xy.startswith('p'))  # Output: False (the string 'Python' does not start with lowercase 'p')
+print(xy.startswith('P'))  # Output: True (the string 'Python' starts with uppercase 'P')
+
+def func(a, b=[]):
+    for i in range(a):
+        b.append(i*i)
+    print(b)
+func(3, [1,2,3])  # Output: [1, 2, 3, 0, 1, 4] (appends the squares of numbers from 0 to 2 to the provided list b)
 
