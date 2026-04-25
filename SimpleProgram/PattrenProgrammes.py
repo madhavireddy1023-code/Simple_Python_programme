@@ -140,3 +140,19 @@ for i in range(4, 0, -1):
 #         i = 3 -> ' '*(5-3) + '*' + ' '*(2*3 - 3) + '*' -> ' '*2 + '*' + ' '*(3) + '*' ->   *   *
 #         i = 2 -> ' '*(5-2) + '*' + ' '*(2*2 - 3) + '*' -> ' '*3 + '*' + ' ' + '*'     ->    * *
 #         i = 1 -> ' '*(5-1) + '*' -> ' '*4 + '*'                                       ->     *
+
+print()  # Print a blank line for separation
+
+d = 1
+for x in range(1, 6):
+    for y in range(1, 6):
+       if (y<=d) != 0 or y>=5-d+1:
+           print('* ', end="")
+       else:
+           print("  ", end="")
+    
+    if x <= 5 // 2:
+        d += 1
+    else:
+        d -= 1
+    print()
