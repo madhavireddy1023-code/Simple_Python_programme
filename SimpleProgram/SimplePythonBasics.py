@@ -161,3 +161,9 @@ def func(a, b=[]):
     print(b)
 func(3, [1,2,3])  # Output: [1, 2, 3, 0, 1, 4] (appends the squares of numbers from 0 to 2 to the provided list b)
 
+# walrus operator
+while (data := input("Enter Input : ")) != 'exit':
+    print("I am great")
+
+print(2*"2") # Output: '22' (the string '2' repeated twice)
+# print(2+"2") # Output: Error: unsupported operand type(s) for +: 'int' and 'str' (cannot add an integer and a string together)
