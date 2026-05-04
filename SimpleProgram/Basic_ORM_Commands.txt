@@ -1,0 +1,24 @@
+# Basic ORM commands retrive data from tables
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Book(models.Model):
+    book = models.CharField(max_length=100)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE) # OR
+    author = models.ManyToManyFields(Author)
+
+# retrive all author
+authors = Author.objects.select_related('author')
+for author in authors:
+    print(author.name)
+
+# retrive all authors name
+books = Book.objects.prefetch_related('authors')
+for book in books.all():
+    print(book.author.name)
+
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+
+# 

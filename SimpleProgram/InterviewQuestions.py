@@ -134,3 +134,16 @@ def count_occurrences_in_number(num):
     return digit_count
 
 print(count_occurrences_in_number(123321))
+
+def unique_difference(my_list):
+    result = []
+    for i in range(len(my_list)):
+        count = 0
+        for j in range(len(my_list)):
+            if my_list[i] == my_list[j]:
+                count += 1
+    if count == 1:
+        result.append(my_list[i])
+
+print(unique_difference([1, 2, 3, 4, 5, 2, 3, 4]))
+
